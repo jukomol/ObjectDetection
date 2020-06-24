@@ -2,6 +2,7 @@ import cv2, time, pandas
 from datetime import datetime
 
 
+df= pandas.read_csv("Times.csv")
 #face_cascade= cv2.CascadeClassifier("E:\\PYHTON-PROJECT\\computer vision\\face_detection\\haarcascade_frontalface_default.xml")
 
 first_frame=None
@@ -38,6 +39,8 @@ while True:
 
 
     status_list.append(status)
+
+    status_list=status_list[-2:]
 
 
     if status_list[-1]==1 and status_list[-2]==0:
